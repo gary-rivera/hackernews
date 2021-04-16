@@ -6,8 +6,8 @@ class SearchForm extends React.Component {
     this.state = {
       term: ''
     };
-    this.handleSearch = this.props.handleSearch.bind(this)
-    this.handleChange = this.props.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange = (evt) => {
@@ -16,9 +16,9 @@ class SearchForm extends React.Component {
 
   handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log(this.state.term)
-    this.handleSearch(this.state.term);
-    this.setState({ term: ''});
+    console.log("STORY FORM'S HANDLE SUBMIT TERM", this.state.term)
+    this.props.handleSearch(this.state.term);
+    //this.setState({ term: ''});
   }
 
   render() {
